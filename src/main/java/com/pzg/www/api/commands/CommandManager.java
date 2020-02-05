@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 public class CommandManager implements CommandExecutor {
 	
 	private String label;
-	List<Command> commands = new ArrayList<Command>();
+	List<Command> commands = new ArrayList<>();
 	
 	public CommandManager(String label) {
 		this.label = label;

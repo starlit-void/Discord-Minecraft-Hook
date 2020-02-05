@@ -19,7 +19,7 @@ public class Command {
 	public boolean runCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length >= 1) {
 			if (args[0].equalsIgnoreCase(this.command)) {
-				if (permissions == "") {
+				if (permissions.equals("")) {
 					return cmethod.run(sender, args);
 				} else if (sender.hasPermission(permissions)) {
 					return cmethod.run(sender, args);

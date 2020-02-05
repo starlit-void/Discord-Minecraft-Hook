@@ -10,10 +10,6 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import com.pzg.www.minecrafthook.main.PluginMain;
 
-import sx.blah.discord.handle.obj.IChannel;
-import sx.blah.discord.handle.obj.IGuild;
-import sx.blah.discord.util.EmbedBuilder;
-
 public class ChatListener implements Listener {
 	
 	private String channel;
@@ -56,7 +52,7 @@ public class ChatListener implements Listener {
 						if (minute.length() == 1)
 							minute = "0" + minute;
 						
-						String message = format.replace("{PLAYER}", player.getDisplayName()).replace("{MESSAGE}", event.getMessage()).replace("{DATE}", cal.get(Calendar.HOUR) + ":" + minute + " " + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.MONTH) + "/" + cal.get(Calendar.YEAR)).replace("&", "§");
+						String message = format.replace("{PLAYER}", player.getDisplayName()).replace("{MESSAGE}", event.getMessage()).replace("{DATE}", cal.get(Calendar.HOUR) + ":" + minute + " " + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.MONTH) + "/" + cal.get(Calendar.YEAR)).replace("&", "ï¿½");
 						
 						channel.sendMessage(message);
 					}
