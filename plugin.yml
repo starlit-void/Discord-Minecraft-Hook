@@ -3,7 +3,8 @@ version: 2.6
 main: com.pzg.www.minecrafthook.main.PluginMain
 description: This plugin allows a discord bot to communicate with you minecraft server.
 author: TJPlaysNow
-depend: [Discord-Bot-API]
+depend: [ ]
+# depend: [Discord-Bot-API]
 commands:
   minecrafthook:
     description: The base command.
