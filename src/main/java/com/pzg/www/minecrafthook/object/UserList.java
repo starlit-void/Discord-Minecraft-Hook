@@ -1,5 +1,7 @@
 package com.pzg.www.minecrafthook.object;
 
+import discord4j.core.object.util.Snowflake;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -23,7 +25,7 @@ public class UserList {
     public void loadUsers(List<String> formattedUsers) {
         for (String formattedUser : formattedUsers) {
             String[] part = formattedUser.split(" : ");
-            User newUser = new User(UUID.fromString(part[0]), Long.parseLong(part[1]));
+            User newUser = new User(UUID.fromString(part[0]), Snowflake.of(Long.parseLong(part[1])));
             users.add(newUser);
             System.out.println("Added user:");
             System.out.println("  - Minecraft UUID: " + newUser.getMinecraftUUID());
@@ -103,7 +105,7 @@ public class UserList {
      * @return The user object or null.
      * @throws NullPointerException If the user wasn't found null.
      */
-    public User getUser(long discordID) throws NullPointerException {
+    public User getUser(Snowflake discordID) throws NullPointerException {
         for (User user : users) {
             if (user.getDiscordID() == discordID) {
                 return user;
@@ -144,7 +146,7 @@ public class UserList {
      * @param random    The string for verify command.
      * @param discordID The user's Discord ID.
      */
-    public void verifyUser(String random, long discordID) {
+    public void verifyUser(String random, Snowflake discordID) {
         UserAwatingConf oldUser = null;
         for (UserAwatingConf user : awaitingConfUsers) {
             if (user.getRandom().equalsIgnoreCase(random)) {

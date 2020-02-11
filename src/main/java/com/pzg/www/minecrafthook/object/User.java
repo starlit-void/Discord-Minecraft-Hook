@@ -1,5 +1,7 @@
 package com.pzg.www.minecrafthook.object;
 
+import discord4j.core.object.util.Snowflake;
+
 import java.util.UUID;
 
 /**
@@ -9,7 +11,7 @@ import java.util.UUID;
 public class User {
 
     private UUID minecraftUUID;
-    private long discordID;
+    private Snowflake discordID;
 
     /**
      * Create a new user.
@@ -17,7 +19,7 @@ public class User {
      * @param minecraftUUID Minecraft Player's UUID.
      * @param discordID     Discord User's ID.
      */
-    public User(UUID minecraftUUID, long discordID) {
+    public User(UUID minecraftUUID, Snowflake discordID) {
         this.minecraftUUID = minecraftUUID;
         this.discordID = discordID;
     }
@@ -36,7 +38,7 @@ public class User {
      *
      * @return Discord User's ID.
      */
-    public long getDiscordID() {
+    public Snowflake getDiscordID() {
         return discordID;
     }
 }
